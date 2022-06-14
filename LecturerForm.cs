@@ -13,6 +13,8 @@ namespace Monitoring_performance
 {
     public partial class LecturerForm : Form
     {
+        public string FIO = "";
+        protected string[] fio;
         string connectionString = @"Data Source=DESKTOP-R4EH7FQ; Initial Catalog = Мониторинг успеваемости; Integrated Security = True";
         public LecturerForm()
         {
@@ -21,12 +23,11 @@ namespace Monitoring_performance
 
         private void LecturerForm_Load(object sender, EventArgs e)
         {
+            fio = FIO.Split(' ');
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet1.Monitoring_View". При необходимости она может быть перемещена или удалена.
             this.monitoring_ViewTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Monitoring_View);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.God". При необходимости она может быть перемещена или удалена.
             this.godTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.God);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Predmet_Prepod". При необходимости она может быть перемещена или удалена.
-            this.predmet_PrepodTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Predmet_Prepod);
             //dataGridView2.DataSource = predmet_PrepodTableAdapter.GetData();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Vid_Monitoringa". При необходимости она может быть перемещена или удалена.
             this.vid_MonitoringaTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Vid_Monitoringa);
@@ -35,11 +36,17 @@ namespace Monitoring_performance
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Predmet". При необходимости она может быть перемещена или удалена.
             this.predmetTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Predmet);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Gryppa". При необходимости она может быть перемещена или удалена.
-            this.gryppaTableAdapter.FillBySecretar(this.мониторинг_успеваемостиDataSet.Gryppa);
+            this.gryppaTableAdapter.FillByLecturer(this.мониторинг_успеваемостиDataSet.Gryppa, fio[0], fio[1], fio[2]);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Student". При необходимости она может быть перемещена или удалена.
             this.studentTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Student);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Monitoring". При необходимости она может быть перемещена или удалена.
             this.monitoringTableAdapter.Fill(this.мониторинг_успеваемостиDataSet.Monitoring);
+
+            // костыль, что бы не было ошибки при подгрузке чужих предметов. Теперь он их и не грузит вообще:D
+            int rowcount = dataGridView1.CurrentCell.RowIndex;
+            int idGroup = Convert.ToInt32(dataGridView1.Rows[rowcount].Cells[0].Value);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "мониторинг_успеваемостиDataSet.Predmet_Prepod". При необходимости она может быть перемещена или удалена.
+            this.predmet_PrepodTableAdapter.FillByLT(this.мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
 
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
@@ -47,7 +54,6 @@ namespace Monitoring_performance
             comboBox2.Text = "";
         }
 
-      
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -58,18 +64,13 @@ namespace Monitoring_performance
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod,idGroup);
+                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod,idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
             }
             catch
             {
                 MessageBox.Show("Ошибка выполнения запроса. Студентов такой группы не существует");
             }
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -155,20 +156,25 @@ namespace Monitoring_performance
                 MessageBoxIcon icon = MessageBoxIcon.Error;
                 DialogResult result = MessageBox.Show(message, caption, button, icon);
             }
+            monitoringTableAdapter.Fill(мониторинг_успеваемостиDataSet.Monitoring);
         }
 
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
-            
+            try
+            {
                 int rowcount = dataGridView1.CurrentCell.RowIndex;
                 int idGroup = Convert.ToInt32(dataGridView1.Rows[rowcount].Cells[0].Value);
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup);
+                //this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
-            
-            
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка выполнения запроса");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,7 +187,7 @@ namespace Monitoring_performance
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup);
+                //this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
             }
             catch
@@ -200,7 +206,7 @@ namespace Monitoring_performance
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup);
+                //this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
             }
             catch
@@ -219,7 +225,7 @@ namespace Monitoring_performance
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup);
+                //this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
             }
             catch
@@ -238,7 +244,7 @@ namespace Monitoring_performance
                 rowcount = dataGridView2.CurrentCell.RowIndex;
                 int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
                 this.studentTableAdapter.FillBySelect(мониторинг_успеваемостиDataSet.Student, idGroup);
-                this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup);
+                //this.predmet_PrepodTableAdapter.FillByLT(мониторинг_успеваемостиDataSet.Predmet_Prepod, idGroup, fio[0], fio[1], fio[2]);
                 this.monitoring_ViewTableAdapter.FillBySearch(мониторинг_успеваемостиDataSet.Monitoring_View, idPred_Prep, comboBox1.Text, comboBox2.Text, idGroup);
             }
             catch
@@ -249,16 +255,30 @@ namespace Monitoring_performance
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int rowcount = dataGridView1.CurrentCell.RowIndex;
-            int idGryppa = Convert.ToInt32(dataGridView1.Rows[rowcount].Cells[0].Value);
-            int count = Convert.ToInt32(this.studentTableAdapter.ScalarQuery(idGryppa));
-            rowcount = dataGridView2.CurrentCell.RowIndex;
-            int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
-            for (int i = 0; i < count; i++)
+            try
+            { 
+                int rowcount = dataGridView1.CurrentCell.RowIndex;
+                int idGryppa = Convert.ToInt32(dataGridView1.Rows[rowcount].Cells[0].Value);
+                int count = Convert.ToInt32(this.studentTableAdapter.ScalarQuery(idGryppa));
+                rowcount = dataGridView2.CurrentCell.RowIndex;
+                int idPred_Prep = Convert.ToInt32(dataGridView2.Rows[rowcount].Cells[0].Value);
+                for (int i = 0; i < count; i++)
+                {
+                    int Ocenka = Convert.ToInt32(dataGridView3.Rows[i].Cells[2].Value);
+                    if (Ocenka >= 0 && Ocenka <= 10)
+                    {
+                        int idMonit = Convert.ToInt32(dataGridView3.Rows[i].Cells[1].Value);
+                        this.monitoringTableAdapter.UpdateQuery(Ocenka, idMonit);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не корректные данные в поле оценка (строка " + i + ")", "Мониторинг успеваемости", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                }
+            }
+            catch
             {
-                int Ocenka = Convert.ToInt32(dataGridView3.Rows[i].Cells[2].Value);
-                int idMonit = Convert.ToInt32(dataGridView3.Rows[i].Cells[1].Value);
-                this.monitoringTableAdapter.UpdateQuery(Ocenka, idMonit);
+                MessageBox.Show("Ошибка сохранения данных", "Мониторинг успеваемости", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
     }

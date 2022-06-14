@@ -275,7 +275,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(960, 634);
+            this.tabPage5.Size = new System.Drawing.Size(960, 606);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Нагрузка";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             this.dataGridView5.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView5.RowTemplate.Height = 24;
             this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView5.Size = new System.Drawing.Size(954, 520);
+            this.dataGridView5.Size = new System.Drawing.Size(954, 492);
             this.dataGridView5.TabIndex = 3;
             this.dataGridView5.DoubleClick += new System.EventHandler(this.dataGridView5_DoubleClick);
             // 
@@ -734,7 +734,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(960, 634);
+            this.tabPage3.Size = new System.Drawing.Size(960, 606);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Преподаватели";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -776,7 +776,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(954, 520);
+            this.dataGridView3.Size = new System.Drawing.Size(954, 492);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.DoubleClick += new System.EventHandler(this.dataGridView3_DoubleClick);
             // 
@@ -966,7 +966,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(960, 634);
+            this.tabPage2.Size = new System.Drawing.Size(960, 606);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Учащиеся";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1011,7 +1011,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(954, 520);
+            this.dataGridView2.Size = new System.Drawing.Size(954, 492);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.DoubleClick += new System.EventHandler(this.dataGridView2_DoubleClick);
             // 
@@ -1249,7 +1249,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(960, 634);
+            this.tabPage1.Size = new System.Drawing.Size(960, 606);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Группа";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1295,7 +1295,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(954, 520);
+            this.dataGridView1.Size = new System.Drawing.Size(954, 492);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
@@ -1575,8 +1575,8 @@
             // импртироватьДанныеВExcelToolStripMenuItem
             // 
             this.импртироватьДанныеВExcelToolStripMenuItem.Name = "импртироватьДанныеВExcelToolStripMenuItem";
-            this.импртироватьДанныеВExcelToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
-            this.импртироватьДанныеВExcelToolStripMenuItem.Text = "Импртировать данные в excel";
+            this.импртироватьДанныеВExcelToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.импртироватьДанныеВExcelToolStripMenuItem.Text = "Импортировать данные в excel";
             this.импртироватьДанныеВExcelToolStripMenuItem.Click += new System.EventHandler(this.импртироватьДанныеВExcelToolStripMenuItem_Click);
             // 
             // SecretaryForm
@@ -1587,7 +1587,7 @@
             this.ClientSize = new System.Drawing.Size(968, 663);
             this.Controls.Add(this.Redact_Table);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SecretaryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

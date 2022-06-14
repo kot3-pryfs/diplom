@@ -419,12 +419,10 @@ namespace Monitoring_performance
         private void импртироватьДанныеВExcelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImportExcel form = new ImportExcel();
+            form.who = "Заведующий отделением";
+
+            form.yes = false;
             form.ShowDialog();
         }
-
-        //private void comboBox18_TextUpdate(object sender, EventArgs e)
-        //{
-        //    this.predmetTableAdapter.FillBySearch(this.мониторинг_успеваемостиDataSet.Predmet, comboBox18.Text);
-        //}
     }
 }

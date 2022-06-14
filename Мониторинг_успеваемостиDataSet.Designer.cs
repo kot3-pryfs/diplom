@@ -52,6 +52,8 @@ namespace Monitoring_performance {
         
         private Monitoring_ImportExcelDataTable tableMonitoring_ImportExcel;
         
+        private Date_PassDataTable tableDate_Pass;
+        
         private global::System.Data.DataRelation relationFK_Gryppa_Kyrator;
         
         private global::System.Data.DataRelation relationFK_Gryppa_Kyrs;
@@ -145,6 +147,9 @@ namespace Monitoring_performance {
                 }
                 if ((ds.Tables["Monitoring_ImportExcel"] != null)) {
                     base.Tables.Add(new Monitoring_ImportExcelDataTable(ds.Tables["Monitoring_ImportExcel"]));
+                }
+                if ((ds.Tables["Date_Pass"] != null)) {
+                    base.Tables.Add(new Date_PassDataTable(ds.Tables["Date_Pass"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -306,6 +311,16 @@ namespace Monitoring_performance {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Date_PassDataTable Date_Pass {
+            get {
+                return this.tableDate_Pass;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -412,6 +427,9 @@ namespace Monitoring_performance {
                 }
                 if ((ds.Tables["Monitoring_ImportExcel"] != null)) {
                     base.Tables.Add(new Monitoring_ImportExcelDataTable(ds.Tables["Monitoring_ImportExcel"]));
+                }
+                if ((ds.Tables["Date_Pass"] != null)) {
+                    base.Tables.Add(new Date_PassDataTable(ds.Tables["Date_Pass"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -530,6 +548,12 @@ namespace Monitoring_performance {
                     this.tableMonitoring_ImportExcel.InitVars();
                 }
             }
+            this.tableDate_Pass = ((Date_PassDataTable)(base.Tables["Date_Pass"]));
+            if ((initTable == true)) {
+                if ((this.tableDate_Pass != null)) {
+                    this.tableDate_Pass.InitVars();
+                }
+            }
             this.relationFK_Gryppa_Kyrator = this.Relations["FK_Gryppa_Kyrator"];
             this.relationFK_Gryppa_Kyrs = this.Relations["FK_Gryppa_Kyrs"];
             this.relationFK_Gryppa_Specialnost = this.Relations["FK_Gryppa_Specialnost"];
@@ -580,6 +604,8 @@ namespace Monitoring_performance {
             base.Tables.Add(this.tableMonitoring_View);
             this.tableMonitoring_ImportExcel = new Monitoring_ImportExcelDataTable();
             base.Tables.Add(this.tableMonitoring_ImportExcel);
+            this.tableDate_Pass = new Date_PassDataTable();
+            base.Tables.Add(this.tableDate_Pass);
             this.relationFK_Gryppa_Kyrator = new global::System.Data.DataRelation("FK_Gryppa_Kyrator", new global::System.Data.DataColumn[] {
                         this.tableKyrator.IdKyratorColumn}, new global::System.Data.DataColumn[] {
                         this.tableGryppa.IdKyratorColumn}, false);
@@ -716,6 +742,12 @@ namespace Monitoring_performance {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeDate_Pass() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -810,6 +842,9 @@ namespace Monitoring_performance {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void Monitoring_ImportExcelRowChangeEventHandler(object sender, Monitoring_ImportExcelRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void Date_PassRowChangeEventHandler(object sender, Date_PassRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -5510,6 +5545,313 @@ namespace Monitoring_performance {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Date_PassDataTable : global::System.Data.TypedTableBase<Date_PassRow> {
+            
+            private global::System.Data.DataColumn columnID_Pass;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            private global::System.Data.DataColumn columnWho_Pass;
+            
+            private global::System.Data.DataColumn columnCopy_or_Pass;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassDataTable() {
+                this.TableName = "Date_Pass";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Date_PassDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected Date_PassDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_PassColumn {
+                get {
+                    return this.columnID_Pass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Who_PassColumn {
+                get {
+                    return this.columnWho_Pass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn Copy_or_PassColumn {
+                get {
+                    return this.columnCopy_or_Pass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRow this[int index] {
+                get {
+                    return ((Date_PassRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Date_PassRowChangeEventHandler Date_PassRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Date_PassRowChangeEventHandler Date_PassRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Date_PassRowChangeEventHandler Date_PassRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event Date_PassRowChangeEventHandler Date_PassRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddDate_PassRow(Date_PassRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRow AddDate_PassRow(System.DateTime Date, string Who_Pass, bool Copy_or_Pass) {
+                Date_PassRow rowDate_PassRow = ((Date_PassRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Date,
+                        Who_Pass,
+                        Copy_or_Pass};
+                rowDate_PassRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDate_PassRow);
+                return rowDate_PassRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRow FindByID_Pass(int ID_Pass) {
+                return ((Date_PassRow)(this.Rows.Find(new object[] {
+                            ID_Pass})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Date_PassDataTable cln = ((Date_PassDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Date_PassDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Pass = base.Columns["ID_Pass"];
+                this.columnDate = base.Columns["Date"];
+                this.columnWho_Pass = base.Columns["Who_Pass"];
+                this.columnCopy_or_Pass = base.Columns["Copy_or_Pass"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnID_Pass = new global::System.Data.DataColumn("ID_Pass", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Pass);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnWho_Pass = new global::System.Data.DataColumn("Who_Pass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWho_Pass);
+                this.columnCopy_or_Pass = new global::System.Data.DataColumn("Copy_or_Pass", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCopy_or_Pass);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Pass}, true));
+                this.columnID_Pass.AutoIncrement = true;
+                this.columnID_Pass.AutoIncrementSeed = -1;
+                this.columnID_Pass.AutoIncrementStep = -1;
+                this.columnID_Pass.AllowDBNull = false;
+                this.columnID_Pass.Unique = true;
+                this.columnDate.AllowDBNull = false;
+                this.columnWho_Pass.AllowDBNull = false;
+                this.columnWho_Pass.MaxLength = 50;
+                this.columnCopy_or_Pass.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRow NewDate_PassRow() {
+                return ((Date_PassRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Date_PassRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Date_PassRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Date_PassRowChanged != null)) {
+                    this.Date_PassRowChanged(this, new Date_PassRowChangeEvent(((Date_PassRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Date_PassRowChanging != null)) {
+                    this.Date_PassRowChanging(this, new Date_PassRowChangeEvent(((Date_PassRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Date_PassRowDeleted != null)) {
+                    this.Date_PassRowDeleted(this, new Date_PassRowChangeEvent(((Date_PassRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Date_PassRowDeleting != null)) {
+                    this.Date_PassRowDeleting(this, new Date_PassRowChangeEvent(((Date_PassRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveDate_PassRow(Date_PassRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Мониторинг_успеваемостиDataSet ds = new Мониторинг_успеваемостиDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Date_PassDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class GodRow : global::System.Data.DataRow {
@@ -7222,6 +7564,65 @@ namespace Monitoring_performance {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Date_PassRow : global::System.Data.DataRow {
+            
+            private Date_PassDataTable tableDate_Pass;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal Date_PassRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDate_Pass = ((Date_PassDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID_Pass {
+                get {
+                    return ((int)(this[this.tableDate_Pass.ID_PassColumn]));
+                }
+                set {
+                    this[this.tableDate_Pass.ID_PassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDate_Pass.DateColumn]));
+                }
+                set {
+                    this[this.tableDate_Pass.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Who_Pass {
+                get {
+                    return ((string)(this[this.tableDate_Pass.Who_PassColumn]));
+                }
+                set {
+                    this[this.tableDate_Pass.Who_PassColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Copy_or_Pass {
+                get {
+                    return ((bool)(this[this.tableDate_Pass.Copy_or_PassColumn]));
+                }
+                set {
+                    this[this.tableDate_Pass.Copy_or_PassColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -7683,6 +8084,40 @@ namespace Monitoring_performance {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Monitoring_ImportExcelRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class Date_PassRowChangeEvent : global::System.EventArgs {
+            
+            private Date_PassRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRowChangeEvent(Date_PassRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Date_PassRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8250,7 +8685,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[12];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok F" +
@@ -8275,52 +8710,73 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSpecialnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok\r\n" +
-                "FROM     Gryppa\r\nWHERE  (IdKyrs < 5)";
+            this._commandCollection[4].CommandText = @"SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok
+FROM     Gryppa
+WHERE  (IdKyrator =
+                      (SELECT IdKyrator
+                       FROM      Kyrator
+                       WHERE   (Fam = @pFam) AND (Name = @pName) AND (Surname = @pSurname)))";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pSurname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok\r\n" +
-                "FROM     Gryppa\r\nWHERE  (Nazvanie = @param) AND (IdKyrs < 5)";
+            this._commandCollection[5].CommandText = @"SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
+FROM dbo.Gryppa
+WHERE IdGryppa IN (Select IdGryppa FROM dbo.Predmet_Prepod WHERE IdPrepod = (Select IdPrepod FROM dbo.Prepod WHERE Fam = @pFam AND Name = @pName AND Surname = @pSurname)) AND IdKyrs < 5";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pSurname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok
+            this._commandCollection[6].CommandText = "SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok\r\n" +
+                "FROM     Gryppa\r\nWHERE  (IdKyrs < 5)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok\r\n" +
+                "FROM     Gryppa\r\nWHERE  (Nazvanie = @param) AND (IdKyrs < 5)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok
 FROM     Gryppa
 WHERE  (IdSpecialnost =
                       (SELECT IdSpecialnost
                        FROM      Specialnost
                        WHERE   (Nazvanie = @param)))";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"INSERT INTO [dbo].[Gryppa] ([Nazvanie], [IdSpecialnost], [IdKyrator], [IdKyrs], [Number_Group], [Srok]) VALUES (@Nazvanie, @IdSpecialnost, @IdKyrator, @IdKyrs, @Number_Group, @Srok);
-SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok FROM Gryppa WHERE (IdGryppa = SCOPE_IDENTITY())";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazvanie", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSpecialnost", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSpecialnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrator", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrator", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrs", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_Group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Number_Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Srok", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Srok", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE Gryppa\r\nSET          IdKyrs = @IdKyrs, Number_Group = @Number_Group\r\nWHERE" +
-                "  (IdGryppa = @param);  \r\n\r\n";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrs", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_Group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Number_Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "UPDATE Gryppa\r\nSET          Nazvanie = @Nazvanie\r\nWHERE  (IdGryppa = @param) And " +
-                "(IdSpecialnost = @param1)";
+            this._commandCollection[9].CommandText = @"INSERT INTO [dbo].[Gryppa] ([Nazvanie], [IdSpecialnost], [IdKyrator], [IdKyrs], [Number_Group], [Srok]) VALUES (@Nazvanie, @IdSpecialnost, @IdKyrator, @IdKyrs, @Number_Group, @Srok);
+SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok FROM Gryppa WHERE (IdGryppa = SCOPE_IDENTITY())";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazvanie", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSpecialnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSpecialnost", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSpecialnost", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrator", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrator", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrs", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_Group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Number_Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Srok", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Srok", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE Gryppa\r\nSET          IdKyrs = @IdKyrs, Number_Group = @Number_Group\r\nWHERE" +
+                "  (IdGryppa = @param);  \r\n\r\n";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdKyrs", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdKyrs", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_Group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Number_Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[11].Connection = this.Connection;
+            this._commandCollection[11].CommandText = "UPDATE Gryppa\r\nSET          Nazvanie = @Nazvanie\r\nWHERE  (IdGryppa = @param) And " +
+                "(IdSpecialnost = @param1)";
+            this._commandCollection[11].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazvanie", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSpecialnost", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8403,8 +8859,128 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBySecretar(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable) {
+        public virtual int FillByKyrator(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable, string pFam, string pName, string pSurname) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.GryppaDataTable GetDataByKyrator(string pFam, string pName, string pSurname) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
+            Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable = new Мониторинг_успеваемостиDataSet.GryppaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByLecturer(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable, string pFam, string pName, string pSurname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.GryppaDataTable GetDataByLecturer(string pFam, string pName, string pSurname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
+            Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable = new Мониторинг_успеваемостиDataSet.GryppaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySecretar(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8417,7 +8993,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Мониторинг_успеваемостиDataSet.GryppaDataTable GetDataBySecretar() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable = new Мониторинг_успеваемостиDataSet.GryppaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8428,7 +9004,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySG(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable, string param) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
             }
@@ -8447,7 +9023,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Мониторинг_успеваемостиDataSet.GryppaDataTable GetDataBySG(string param) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
             }
@@ -8464,7 +9040,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBySpec(Мониторинг_успеваемостиDataSet.GryppaDataTable dataTable, string param) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
             }
@@ -8483,7 +9059,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Мониторинг_успеваемостиDataSet.GryppaDataTable GetDataBySpec(string param) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((param == null)) {
                 throw new global::System.ArgumentNullException("param");
             }
@@ -8743,7 +9319,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string Nazvanie, int IdSpecialnost, int IdKyrator, global::System.Nullable<int> IdKyrs, global::System.Nullable<int> Number_Group, global::System.Nullable<int> Srok) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((Nazvanie == null)) {
                 throw new global::System.ArgumentNullException("Nazvanie");
             }
@@ -8792,7 +9368,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateKyrsNameG(global::System.Nullable<int> IdKyrs, global::System.Nullable<int> Number_Group, int param) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             if ((IdKyrs.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(IdKyrs.Value));
             }
@@ -8828,7 +9404,7 @@ SELECT IdGryppa, Nazvanie, IdSpecialnost, IdKyrator, IdKyrs, Number_Group, Srok 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateNameGrypp(string Nazvanie, int param, int param1) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
             if ((Nazvanie == null)) {
                 throw new global::System.ArgumentNullException("Nazvanie");
             }
@@ -9037,7 +9613,7 @@ SELECT IdKyrator, Fam, Name, Surname, Login, Password FROM Kyrator WHERE (IdKyra
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdKyrator, Fam, Name, Surname, Login, Password FROM dbo.Kyrator";
@@ -9048,6 +9624,14 @@ SELECT IdKyrator, Fam, Name, Surname, Login, Password FROM Kyrator WHERE (IdKyra
                 "Fam = @param)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT COUNT(*) FROM Kyrator\r\nWHERE Fam=@pFam AND Name = @pName AND Surname = @pS" +
+                "urname";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pSurname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9339,6 +9923,52 @@ SELECT IdKyrator, Fam, Name, Surname, Login, Password FROM Kyrator WHERE (IdKyra
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Fam, string Name, string Surname, string Login, string Password, int Original_IdKyrator, string Original_Fam, string Original_Name, string Original_Surname, string Original_Login, string Original_Password) {
             return this.Update(Fam, Name, Surname, Login, Password, Original_IdKyrator, Original_Fam, Original_Name, Original_Surname, Original_Login, Original_Password, Original_IdKyrator);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ScalarQuery(string pFam, string pName, string pSurname) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(pSurname));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     
@@ -10873,7 +11503,7 @@ SELECT IdPredmet_Prepod, IdPredmet, IdPrepod, Podgryppa, idGryppa FROM Predmet_P
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdPredmet_Prepod, IdPredmet, IdPrepod, Podgryppa, idGryppa FROM Predmet_Pr" +
@@ -10893,9 +11523,13 @@ SELECT IdPredmet_Prepod, IdPredmet, IdPrepod, Podgryppa, idGryppa FROM Predmet_P
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT IdPredmet_Prepod, IdPredmet, IdPrepod, Podgryppa, idGryppa\r\nFROM     Predm" +
-                "et_Prepod\r\nWHERE  (idGryppa = @pGryppa)";
+                "et_Prepod\r\nWHERE  (idGryppa = @pGryppa) AND IdPrepod = (Select IdPrepod FROM dbo" +
+                ".Prepod WHERE (Fam = @pFam) AND (Name = @pName) AND (Surname = @pSurname))";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pSurname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT IdPredmet_Prepod, IdPredmet, IdPrepod, Podgryppa, idGryppa FROM Predmet_Pr" +
@@ -10917,6 +11551,11 @@ WHERE (Predmet.Nazvanie LIKE @pPredmet + '%') AND (Prepod.Fam LIKE @pFIO + '%') 
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPredmet", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFIO", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT COUNT(*) FROM Predmet_Prepod\r\nWhere IdGryppa = @pGryppa";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10971,13 +11610,31 @@ WHERE (Predmet.Nazvanie LIKE @pPredmet + '%') AND (Prepod.Fam LIKE @pFIO + '%') 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByLT(Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable dataTable, global::System.Nullable<int> pGryppa) {
+        public virtual int FillByLT(Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable dataTable, global::System.Nullable<int> pGryppa, string pFam, string pName, string pSurname) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((pGryppa.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pGryppa.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(pSurname));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10990,13 +11647,31 @@ WHERE (Predmet.Nazvanie LIKE @pPredmet + '%') AND (Prepod.Fam LIKE @pFIO + '%') 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable GetDataByLT(global::System.Nullable<int> pGryppa) {
+        public virtual Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable GetDataByLT(global::System.Nullable<int> pGryppa, string pFam, string pName, string pSurname) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((pGryppa.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pGryppa.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(pSurname));
             }
             Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable dataTable = new Мониторинг_успеваемостиDataSet.Predmet_PrepodDataTable();
             this.Adapter.Fill(dataTable);
@@ -11304,6 +11979,40 @@ WHERE (Predmet.Nazvanie LIKE @pPredmet + '%') AND (Prepod.Fam LIKE @pFIO + '%') 
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ScalarQuery(global::System.Nullable<int> pGryppa) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((pGryppa.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(pGryppa.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
         }
     }
     
@@ -12548,7 +13257,7 @@ SELECT IdStudent, Fam, Name, Surname, Podgryppa, IdGryppa FROM Student WHERE (Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdStudent, Fam, Name, Surname, Podgryppa, IdGryppa FROM dbo.Student";
@@ -12582,21 +13291,29 @@ WHERE  (Student.Fam LIKE @Fam + '%') AND (Student.Name LIKE @Name + '%') AND (Gr
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[Student] ([Fam], [Name], [Surname], [Podgryppa], [IdGryppa]) V" +
+            this._commandCollection[5].CommandText = "SELECT IdStudent, Fam, Name, Surname, Podgryppa, IdGryppa\r\nFROM     Student\r\nWHER" +
+                "E  (Fam = @pFam) AND (Name = @pName) AND (Surname = @pSurname)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pFam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pName", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pSurname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "INSERT INTO [dbo].[Student] ([Fam], [Name], [Surname], [Podgryppa], [IdGryppa]) V" +
                 "ALUES (@Fam, @Name, @Surname, @Podgryppa, @IdGryppa);\r\nSELECT IdStudent, Fam, Na" +
                 "me, Surname, Podgryppa, IdGryppa FROM Student WHERE (IdStudent = SCOPE_IDENTITY(" +
                 "))";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Podgryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Podgryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT COUNT(*) \r\nFROM Student\r\nWHERE IdGryppa = @pGryppa";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fam", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Fam", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Podgryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Podgryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT COUNT(*) \r\nFROM Student\r\nWHERE IdGryppa = @pGryppa";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGryppa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12730,6 +13447,66 @@ WHERE  (Student.Fam LIKE @Fam + '%') AND (Student.Name LIKE @Name + '%') AND (Gr
         public virtual Мониторинг_успеваемостиDataSet.StudentDataTable GetDataBy2(int param) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(param));
+            Мониторинг_успеваемостиDataSet.StudentDataTable dataTable = new Мониторинг_успеваемостиDataSet.StudentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByStudent(Мониторинг_успеваемостиDataSet.StudentDataTable dataTable, string pFam, string pName, string pSurname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.StudentDataTable GetDataByStudent(string pFam, string pName, string pSurname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((pFam == null)) {
+                throw new global::System.ArgumentNullException("pFam");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pFam));
+            }
+            if ((pName == null)) {
+                throw new global::System.ArgumentNullException("pName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pName));
+            }
+            if ((pSurname == null)) {
+                throw new global::System.ArgumentNullException("pSurname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pSurname));
+            }
             Мониторинг_успеваемостиDataSet.StudentDataTable dataTable = new Мониторинг_успеваемостиDataSet.StudentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -12971,7 +13748,7 @@ WHERE  (Student.Fam LIKE @Fam + '%') AND (Student.Name LIKE @Name + '%') AND (Gr
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string Fam, string Name, string Surname, global::System.Nullable<int> Podgryppa, int IdGryppa) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((Fam == null)) {
                 throw new global::System.ArgumentNullException("Fam");
             }
@@ -13018,7 +13795,7 @@ WHERE  (Student.Fam LIKE @Fam + '%') AND (Student.Name LIKE @Name + '%') AND (Gr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object ScalarQuery(int pGryppa) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             command.Parameters[0].Value = ((int)(pGryppa));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14073,25 +14850,38 @@ WHERE (IdStudent IN (Select IdStudent
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Учащийся, IdMonitoringa, Ocenka, IdVidMonitoringa, IdPredmet_Prepod, IdGod" +
-                ", IdStudent, Nazvanie, Вид_мониторинга, Год, Название_Предмета, Преподаватель\r\nF" +
+            this._commandCollection[0].CommandText = "SELECT Учащийся, Ocenka, Nazvanie, Вид_мониторинга, Год, Название_Предмета, Препо" +
+                "даватель, IdVidMonitoringa, IdPredmet_Prepod, IdGod, IdStudent, IdMonitoringa\r\nF" +
                 "ROM     Monitoring_ImportExcel";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT Учащийся, IdMonitoringa, Ocenka, IdVidMonitoringa, IdPredmet_Prepod, IdGod, IdStudent, Nazvanie, Вид_мониторинга, Год, Название_Предмета, Преподаватель
+            this._commandCollection[1].CommandText = @"SELECT Учащийся, Ocenka, Nazvanie, Вид_мониторинга, Год, Название_Предмета, Преподаватель, IdVidMonitoringa, IdPredmet_Prepod, IdGod, IdStudent, IdMonitoringa
 FROM     Monitoring_ImportExcel
-WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND (Название_Предмета Like @pPredmet + '%') AND(Преподаватель Like @pPrepod + '%') AND (Вид_мониторинга Like @pVid + '%') AND (Год Like @pGod + '%')";
+WHERE IdPredmet_Prepod IN (Select IdPredmet_Prepod FROM dbo.Predmet_Prepod WHERE IdGryppa = @pGryppa) AND (Вид_мониторинга LIKE @pVid + '%') AND (Год LIKE @pGod + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pStudent", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Учащийся", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPredmet", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "Название_Предмета", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pPrepod", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Преподаватель", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pVid", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Вид_мониторинга", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGod", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Год", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT IdGod, IdMonitoringa, IdPredmet_Prepod, IdStudent, IdVidMonitoringa, Nazvanie, Ocenka, Вид_мониторинга, Год, Название_Предмета, Преподаватель, Учащийся FROM Monitoring_ImportExcel WHERE (Nazvanie LIKE @pGryppa + '%') AND (Вид_мониторинга LIKE @pVid + '%') AND (Год LIKE @pGod + '%')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGryppa", global::System.Data.SqlDbType.VarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "Nazvanie", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pVid", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Вид_мониторинга", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGod", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Год", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Учащийся, Ocenka, Nazvanie, Вид_мониторинга, Год, Название_Предмета, Преподаватель, IdVidMonitoringa, IdPredmet_Prepod, IdGod, IdStudent, IdMonitoringa
+FROM     Monitoring_ImportExcel
+WHERE  (IdStudent = @pStudent) AND (Вид_мониторинга LIKE @pVid + '%') AND (Год LIKE @pGod + '%')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pStudent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdStudent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pVid", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Вид_мониторинга", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pGod", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Год", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14122,43 +14912,25 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBySearch(Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable, string pGryppa, string pStudent, string pPredmet, string pPrepod, string pVid, string pGod) {
+        public virtual int FillByKyrator(Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable, string pVid, string pGod, global::System.Nullable<int> pGryppa) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((pGryppa == null)) {
-                throw new global::System.ArgumentNullException("pGryppa");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pGryppa));
-            }
-            if ((pStudent == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pStudent));
-            }
-            if ((pPredmet == null)) {
-                throw new global::System.ArgumentNullException("pPredmet");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pPredmet));
-            }
-            if ((pPrepod == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(pPrepod));
-            }
             if ((pVid == null)) {
                 throw new global::System.ArgumentNullException("pVid");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(pVid));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pVid));
             }
             if ((pGod == null)) {
                 throw new global::System.ArgumentNullException("pGod");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pGod));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pGod));
+            }
+            if ((pGryppa.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(pGryppa.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14171,47 +14943,558 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable GetDataBySearch(string pGryppa, string pStudent, string pPredmet, string pPrepod, string pVid, string pGod) {
+        public virtual Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable GetDataByKyrator(string pVid, string pGod, global::System.Nullable<int> pGryppa) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((pVid == null)) {
+                throw new global::System.ArgumentNullException("pVid");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pVid));
+            }
+            if ((pGod == null)) {
+                throw new global::System.ArgumentNullException("pGod");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pGod));
+            }
+            if ((pGryppa.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(pGryppa.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable = new Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySearch(Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable, string pGryppa, string pVid, string pGod) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((pGryppa == null)) {
                 throw new global::System.ArgumentNullException("pGryppa");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pGryppa));
             }
-            if ((pStudent == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pStudent));
-            }
-            if ((pPredmet == null)) {
-                throw new global::System.ArgumentNullException("pPredmet");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pPredmet));
-            }
-            if ((pPrepod == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(pPrepod));
-            }
             if ((pVid == null)) {
                 throw new global::System.ArgumentNullException("pVid");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(pVid));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pVid));
             }
             if ((pGod == null)) {
                 throw new global::System.ArgumentNullException("pGod");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((string)(pGod));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pGod));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable GetDataBySearch(string pGryppa, string pVid, string pGod) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((pGryppa == null)) {
+                throw new global::System.ArgumentNullException("pGryppa");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(pGryppa));
+            }
+            if ((pVid == null)) {
+                throw new global::System.ArgumentNullException("pVid");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pVid));
+            }
+            if ((pGod == null)) {
+                throw new global::System.ArgumentNullException("pGod");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pGod));
             }
             Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable = new Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByStudent(Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable, int pStudent, string pVid, string pGod) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pStudent));
+            if ((pVid == null)) {
+                throw new global::System.ArgumentNullException("pVid");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pVid));
+            }
+            if ((pGod == null)) {
+                throw new global::System.ArgumentNullException("pGod");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pGod));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable GetDataByStudent(int pStudent, string pVid, string pGod) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(pStudent));
+            if ((pVid == null)) {
+                throw new global::System.ArgumentNullException("pVid");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(pVid));
+            }
+            if ((pGod == null)) {
+                throw new global::System.ArgumentNullException("pGod");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(pGod));
+            }
+            Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable dataTable = new Мониторинг_успеваемостиDataSet.Monitoring_ImportExcelDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Date_PassTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public Date_PassTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Date_Pass";
+            tableMapping.ColumnMappings.Add("ID_Pass", "ID_Pass");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("Who_Pass", "Who_Pass");
+            tableMapping.ColumnMappings.Add("Copy_or_Pass", "Copy_or_Pass");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Date_Pass] WHERE (([ID_Pass] = @Original_ID_Pass) AND ([Date] = @Ori" +
+                "ginal_Date) AND ([Who_Pass] = @Original_Who_Pass) AND ([Copy_or_Pass] = @Origina" +
+                "l_Copy_or_Pass))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Who_Pass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Who_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Copy_or_Pass", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Date_Pass] ([ID_Pass], [Date], [Who_Pass], [Copy_or_Pass]) VALUES (@" +
+                "ID_Pass, @Date, @Who_Pass, @Copy_or_Pass);\r\nSELECT ID_Pass, Date, Who_Pass, Copy" +
+                "_or_Pass FROM Date_Pass WHERE (ID_Pass = @ID_Pass)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Who_Pass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Who_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Copy_or_Pass", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Date_Pass] SET [ID_Pass] = @ID_Pass, [Date] = @Date, [Who_Pass] = @Who_Pass, [Copy_or_Pass] = @Copy_or_Pass WHERE (([ID_Pass] = @Original_ID_Pass) AND ([Date] = @Original_Date) AND ([Who_Pass] = @Original_Who_Pass) AND ([Copy_or_Pass] = @Original_Copy_or_Pass));
+SELECT ID_Pass, Date, Who_Pass, Copy_or_Pass FROM Date_Pass WHERE (ID_Pass = @ID_Pass)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Who_Pass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Who_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Copy_or_Pass", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Pass", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Who_Pass", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Who_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Copy_or_Pass", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Monitoring_performance.Properties.Settings.Default.Мониторинг_успеваемостиConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_Pass, Date, Who_Pass, Copy_or_Pass\r\nFROM     Date_Pass";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID_Pass, Date, Who_Pass, Copy_or_Pass\r\nFROM     Date_Pass\r\nWhere YEAR(Date" +
+                ") = @pDate AND Copy_or_Pass = @pCopy";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pDate", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pCopy", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO [Date_Pass] ([Date], [Who_Pass], [Copy_or_Pass]) VALUES (@Date, @Who_" +
+                "Pass, @Copy_or_Pass);\r\nSELECT ID_Pass, Date, Who_Pass, Copy_or_Pass FROM Date_Pa" +
+                "ss";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Who_Pass", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Who_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Copy_or_Pass", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Copy_or_Pass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Мониторинг_успеваемостиDataSet.Date_PassDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Мониторинг_успеваемостиDataSet.Date_PassDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Мониторинг_успеваемостиDataSet.Date_PassDataTable dataTable = new Мониторинг_успеваемостиDataSet.Date_PassDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Мониторинг_успеваемостиDataSet.Date_PassDataTable dataTable, decimal pDate, bool pCopy) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(pDate));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((bool)(pCopy));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Мониторинг_успеваемостиDataSet.Date_PassDataTable GetDataBy(decimal pDate, bool pCopy) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(pDate));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((bool)(pCopy));
+            Мониторинг_успеваемостиDataSet.Date_PassDataTable dataTable = new Мониторинг_успеваемостиDataSet.Date_PassDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Мониторинг_успеваемостиDataSet.Date_PassDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Мониторинг_успеваемостиDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Date_Pass");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID_Pass, System.DateTime Original_Date, string Original_Who_Pass, bool Original_Copy_or_Pass) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Pass));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Date));
+            if ((Original_Who_Pass == null)) {
+                throw new global::System.ArgumentNullException("Original_Who_Pass");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Who_Pass));
+            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_Copy_or_Pass));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID_Pass, System.DateTime Date, string Who_Pass, bool Copy_or_Pass) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Pass));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Date));
+            if ((Who_Pass == null)) {
+                throw new global::System.ArgumentNullException("Who_Pass");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Who_Pass));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(Copy_or_Pass));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int ID_Pass, System.DateTime Date, string Who_Pass, bool Copy_or_Pass, int Original_ID_Pass, System.DateTime Original_Date, string Original_Who_Pass, bool Original_Copy_or_Pass) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Pass));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Date));
+            if ((Who_Pass == null)) {
+                throw new global::System.ArgumentNullException("Who_Pass");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Who_Pass));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(Copy_or_Pass));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ID_Pass));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Date));
+            if ((Original_Who_Pass == null)) {
+                throw new global::System.ArgumentNullException("Original_Who_Pass");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Who_Pass));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Original_Copy_or_Pass));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(System.DateTime Date, string Who_Pass, bool Copy_or_Pass, int Original_ID_Pass, System.DateTime Original_Date, string Original_Who_Pass, bool Original_Copy_or_Pass) {
+            return this.Update(Original_ID_Pass, Date, Who_Pass, Copy_or_Pass, Original_ID_Pass, Original_Date, Original_Who_Pass, Original_Copy_or_Pass);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string Date, string Who_Pass, bool Copy_or_Pass) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Date));
+            }
+            if ((Who_Pass == null)) {
+                throw new global::System.ArgumentNullException("Who_Pass");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Who_Pass));
+            }
+            command.Parameters[2].Value = ((bool)(Copy_or_Pass));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -14395,6 +15678,8 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
         
         private Vid_MonitoringaTableAdapter _vid_MonitoringaTableAdapter;
         
+        private Date_PassTableAdapter _date_PassTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -14566,6 +15851,20 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public Date_PassTableAdapter Date_PassTableAdapter {
+            get {
+                return this._date_PassTableAdapter;
+            }
+            set {
+                this._date_PassTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -14627,6 +15926,10 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                             && (this._vid_MonitoringaTableAdapter.Connection != null))) {
                     return this._vid_MonitoringaTableAdapter.Connection;
                 }
+                if (((this._date_PassTableAdapter != null) 
+                            && (this._date_PassTableAdapter.Connection != null))) {
+                    return this._date_PassTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -14671,6 +15974,9 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                     count = (count + 1);
                 }
                 if ((this._vid_MonitoringaTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._date_PassTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -14783,6 +16089,15 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._date_PassTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Date_Pass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._date_PassTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -14881,6 +16196,14 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._date_PassTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Date_Pass.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._date_PassTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -14891,6 +16214,14 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(Мониторинг_успеваемостиDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._date_PassTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Date_Pass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._date_PassTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._monitoringTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Monitoring.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -15073,6 +16404,11 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
+            if (((this._date_PassTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._date_PassTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager не содержит сведений о подключении. Укажите для каждого адапт" +
@@ -15204,6 +16540,15 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                         adaptersWithAcceptChangesDuringUpdate.Add(this._vid_MonitoringaTableAdapter.Adapter);
                     }
                 }
+                if ((this._date_PassTableAdapter != null)) {
+                    revertConnections.Add(this._date_PassTableAdapter, this._date_PassTableAdapter.Connection);
+                    this._date_PassTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._date_PassTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._date_PassTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._date_PassTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._date_PassTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -15305,6 +16650,10 @@ WHERE (Nazvanie Like @pGryppa+'%')AND (Учащийся Like @pStudent +'%') AND
                 if ((this._vid_MonitoringaTableAdapter != null)) {
                     this._vid_MonitoringaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vid_MonitoringaTableAdapter]));
                     this._vid_MonitoringaTableAdapter.Transaction = null;
+                }
+                if ((this._date_PassTableAdapter != null)) {
+                    this._date_PassTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._date_PassTableAdapter]));
+                    this._date_PassTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
